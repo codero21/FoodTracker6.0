@@ -28,6 +28,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // Assign text field content to label output
+        mealNameLabel.text = textField.text
+        
+        textField.text = ""
+    }
+    
     //MARK: Actions
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mealNameLabel.text = "Some Default Text...👍🏾"
