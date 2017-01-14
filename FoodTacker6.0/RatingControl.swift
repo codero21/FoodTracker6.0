@@ -8,6 +8,8 @@
 
 import UIKit
 
+// @IBDesignable. This lets Interface Builder instantiate and draw a 
+// copy of your control directly in the canvas
 @IBDesignable class RatingControl: UIStackView {
     //MARK: Properties
     private var ratingButtons = [UIButton]()
