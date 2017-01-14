@@ -35,6 +35,9 @@ class RatingControl: UIStackView {
     
     // //MARK: Private Methods
     private func setupButtons() {
+        
+    for _ in 0..<5 {
+        
         // Create the button
         let button = UIButton()
         button.backgroundColor = UIColor.red
@@ -51,4 +54,7 @@ class RatingControl: UIStackView {
         // Add the button to the stack
         addArrangedSubview(button)
     }
+  }
+    
 }
+

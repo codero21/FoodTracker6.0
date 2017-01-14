@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="roJ-az-fpQ">
-                                        <rect key="frame" x="0.0" y="104.5" width="320.5" height="320"/>
+                                        <rect key="frame" x="0.0" y="104.5" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="roJ-az-fpQ" secondAttribute="height" multiplier="1:1" id="HbT-tm-O71"/>
@@ -55,7 +55,7 @@
                                             <outletCollection property="gestureRecognizers" destination="ztT-2v-uQY" appends="YES" id="eIa-1W-M1K"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ukv-OP-zA8" customClass="RatingControl" customModule="FoodTacker6_0" customModuleProvider="target">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ukv-OP-zA8" customClass="RatingControl" customModule="FoodTacker6_0" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="432.5" width="200" height="110"/>
                                     </stackView>
                                 </subviews>
