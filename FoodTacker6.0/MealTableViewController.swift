@@ -126,5 +126,25 @@ class MealTableViewController: UITableViewController {
         meals += [ meal1, meal2, meal3 ]
     }
     
+    //MARK: Actions
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as?
+            MealViewController, let meal = sourceViewController.meal {
+            
+            // Add a new meal.
+            //This code computes the location in the table view where the new table view cell 
+            //representing the new meal will be inserted, and stores it in a local constant 
+            //called newIndexPath.
+            let newIndexPath = IndexPath(row: meals.count, section: 0)
+            
+            // This adds the new meal to the existing list of meals in the data model.
+            meals.append(meal)
+            
+            // This animates the addition of a new row to the table view for the cell that contains 
+            // information about the new meal
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
     
 }
