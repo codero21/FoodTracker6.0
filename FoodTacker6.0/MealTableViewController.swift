@@ -138,11 +138,11 @@ class MealTableViewController: UITableViewController {
             fatalError("Unable to instantiate meal1")
         }
         
-        guard let meal2 = Meal(name: "Caprese Salad", photo: photo2, rating: 5) else {
+        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5) else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let meal3 = Meal(name: "Caprese Salad", photo: photo3, rating: 3) else {
+        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3) else {
             fatalError("Unable to instantiate meal3")
         }
         
@@ -154,20 +154,26 @@ class MealTableViewController: UITableViewController {
         if let sourceViewController = sender.source as?
             MealViewController, let meal = sourceViewController.meal {
             
-            // Add a new meal.
-            //This code computes the location in the table view where the new table view cell 
-            //representing the new meal will be inserted, and stores it in a local constant 
-            //called newIndexPath.
-            let newIndexPath = IndexPath(row: meals.count, section: 0)
-            
-            // This adds the new meal to the existing list of meals in the data model.
-            meals.append(meal)
-            
-            // This animates the addition of a new row to the table view for the cell that contains 
-            // information about the new meal
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            // This code checks whether a row in the table view is selected.
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing meal.
+                meals[selectedIndexPath.row] = meal
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                // Add a new meal.
+                //This code computes the location in the table view where the new table view cell
+                //representing the new meal will be inserted, and stores it in a local constant
+                //called newIndexPath.
+                let newIndexPath = IndexPath(row: meals.count, section: 0)
+                
+                // This adds the new meal to the existing list of meals in the data model.
+                meals.append(meal)
+                
+                // This animates the addition of a new row to the table view for the cell that contains
+                // information about the new meal
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
-    
-    
+
 }
