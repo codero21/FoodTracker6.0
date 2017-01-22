@@ -80,7 +80,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mod-3X-6ee">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mod-3X-6ee">
                                 <rect key="frame" x="16" y="84" width="343" height="410"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="10E-R3-D6O">
@@ -116,7 +116,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="h7M-yx-a98">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="luy-Qh-fh4"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="luy-Qh-fh4">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="Vcj-ie-js0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ZhN-e3-8FQ">
                             <connections>
                                 <segue destination="YcQ-C6-MKS" kind="unwind" unwindAction="unwindToMealListWithSender:" id="6ad-Zg-Js7"/>
