@@ -77,7 +77,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let rating = ratingControl.rating
         
         meal = Meal(name: name, photo: photo, rating: rating)
-      
+      print("Save Clicked.....✔")
     }
     
     //MARK: Actions
