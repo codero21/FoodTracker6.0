@@ -15,6 +15,11 @@ class Meal: NSObject, NSCoding {
     var photo: UIImage?
     var rating: Int
     
+    //MARK: Archiving Paths
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("meals")
+    
     // MARK: Types
     struct PropertyKey {
         static let name = "name"
@@ -60,7 +65,7 @@ class Meal: NSObject, NSCoding {
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating)        
+        self.init(name: name, photo: photo, rating: rating)
     }
     
 }
