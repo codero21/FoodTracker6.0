@@ -12,14 +12,6 @@ import os.log
 class MealTableViewController: UITableViewController {
     //MARK: Properties
     var meals = [Meal]()
-    
-    struct propertyKey {
-        static let name = "name"
-        static let photo = "photo"
-        static let rating = "rating"
-    }
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

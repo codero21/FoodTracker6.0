@@ -8,11 +8,18 @@
 
 import UIKit
 
-class Meal {
+class Meal: NSObject, NSCoding {
     //MARK: Properties
     var name: String
     var photo: UIImage?
     var rating: Int
+    
+    // MARK: Types
+    struct PropertyKey {
+        static let name = "name"
+        static let photo = "photo"
+        static let rating = "rating"
+    }
     
     //MARK: Initialization
     init?(name: String, photo: UIImage?, rating: Int) {
@@ -30,6 +37,13 @@ class Meal {
         self.name = name
         self.photo = photo
         self.rating = rating
+    }
+    
+    //MARK: NSCoding
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: PropertyKey.name)
+        aCoder.encode(photo, forKey: PropertyKey.photo)
+        aCoder.encode(rating, forKey: PropertyKey.rating)
     }
 }
 
