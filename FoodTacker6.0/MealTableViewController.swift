@@ -150,7 +150,20 @@ class MealTableViewController: UITableViewController {
         }
         
         meals += [ meal1, meal2, meal3 ]
+        
     }
+    
+    private func saveMeals() {
+        let isSuccessfulSavw = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
+        
+        if isSuccessfulSavw {
+            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+        }
+        
+    }
+    
     
     //MARK: Actions
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
